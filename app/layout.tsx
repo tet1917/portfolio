@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat , Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
+import Header from "./component/layouts/header/Header";
 
 const geistSans = Montserrat({
   variable: "--font-geist-sans",
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Header></Header>
         {children}
       </body>
     </html>

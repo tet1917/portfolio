@@ -1,7 +1,5 @@
+import Top from "./features/Top/page";
+
 export default function Home() {
-  return (
-    <div>
-      <div>test</div>
-    </div>
-  );
+  return <Top/>
 }
