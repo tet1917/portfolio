@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat , Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
+import Header from "./component/layouts/header/Header";
 
-const geistSans = Geist({
+const geistSans = Montserrat({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = Zen_Kaku_Gothic_New({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  weight:"400",
 });
 
 export const metadata: Metadata = {
@@ -23,8 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Header></Header>
         {children}
       </body>
     </html>
