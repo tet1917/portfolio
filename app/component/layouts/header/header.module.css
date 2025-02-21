@@ -8,13 +8,11 @@
   inset: 0 0 auto;
   z-index: 100;
 }
- .header nav {
-    display: flex;
-    width: max(40%, 400px);
-    justify-content: space-between;
-    
-  }
- .header a {
+.header nav {
+  display: flex;
+  width: max(40%, 400px);
+  justify-content: space-between;
+}
+.header a {
   text-transform: uppercase;
-    
-  }
+}

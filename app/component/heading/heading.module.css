@@ -1,0 +1,17 @@
+.commonHeading {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-left: calc(1ch + 8vw * .47 )
+}
+.commonHeading span {
+  margin-left:  calc(-1ch - 8vw * .5);
+  font-size: 8vw;
+  text-transform: uppercase;
+  letter-spacing: 0.5ch;
+  font-weight: 600;
+}
+.commonHeading span::first-letter {
+  color: var(--primary-c);
+}

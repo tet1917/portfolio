@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Montserrat , Zen_Kaku_Gothic_New } from "next/font/google";
+import { Montserrat, Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
-import Header from "./component/layouts/header/Header";
+import { Header } from "./component/layouts/header/Header";
+// import { MomentumScroll } from "./component/MomentumScroll";
 
-const geistSans = Montserrat({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
+  weight: ["300","400", "500"],
 });
 
-const geistMono = Zen_Kaku_Gothic_New({
-  variable: "--font-geist-mono",
+const zenKakuGothicNew = Zen_Kaku_Gothic_New({
+  variable: "--font-zen-kaku-gothic-new",
   subsets: ["latin"],
-  weight:"400",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -26,9 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${montserrat.variable} ${zenKakuGothicNew.variable}`}>
         <Header></Header>
-        {children}
+        {/* <MomentumScroll> */}
+        <main>{children}</main>
+        {/* </MomentumScroll> */}
       </body>
     </html>
   );

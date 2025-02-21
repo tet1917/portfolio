@@ -7,6 +7,9 @@ body {
   overflow-x: hidden;
 }
 
+body {
+  font-family: var(--font-montserrat), var(--font-zen-kaku-gothic-new), sans-serif;
+}
 
 * {
   box-sizing: border-box;
