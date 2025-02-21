@@ -1,0 +1,99 @@
+.parallax {
+  position: relative;
+  height: 200vmin;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  margin-left: -5vw;
+}
+.parallax h3 {
+  display: flex;
+  flex-direction: column;
+  gap: 40vmin;
+  width: 80vw;
+  font-weight: bold;
+  font-size: 12vw;
+  position: relative;
+  z-index: 10;
+}
+.parallax h3 span {
+  color: #fff;
+  text-shadow: 0 0.2em 0.4em var(--primary-c);
+}
+.parallax h3 span:last-child {
+  align-self: end;
+}
+
+.parallax .item {
+  overflow: hidden;
+  position: absolute;
+  top: 32%;
+  left: 10%;
+  width: 53%;
+  aspect-ratio: 8/5;
+  transition: transform 1s ease-out;
+  will-change: transform;
+}
+.parallax img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.parallax .item:first-child {
+  z-index: 5;
+}
+.parallax .item:nth-child(2) {
+  top: 10%;
+  left: 5%;
+  width: 20%;
+  aspect-ratio: 5/7;
+  z-index: 4;
+  opacity: 0.8;
+}
+.parallax .item:nth-child(3) {
+  inset: 25% 0 auto auto;
+  width: 40%;
+  aspect-ratio: 16/9;
+  z-index: 2;
+}
+.parallax .item:nth-child(3) img {
+  scale: -1 1;
+  filter:saturate(.7) brightness(1.2);
+}
+.parallax .item:nth-child(4) {
+  top: 53%;
+  left: 55%;
+  width: 33%;
+  aspect-ratio: 1;
+  z-index: 4;
+}
+.parallax .item:nth-child(5) {
+  top: 0;
+  left: 40%;
+  width: 34%;
+  aspect-ratio: 1;
+}
+.parallax .item:nth-child(6) {
+  top: 57%;
+  left: 0;
+  width: 20%;
+  aspect-ratio: 1;
+  opacity: 0.8;
+}
+.parallax .item:nth-child(6) img {
+  object-position: 5% 50%;
+}
+.parallax .item:nth-child(7) {
+  inset: auto auto 0 33%;
+  width: 30%;
+  aspect-ratio: 1;
+  opacity: 0.8;
+}
+.parallax .item:nth-child(8) {
+  inset: auto 7% 3% auto;
+  width: 14%;
+  aspect-ratio: 5/8;
+  opacity: 0.8;
+}

@@ -1,0 +1,11 @@
+.name {
+  position: absolute;
+  inset: auto 10vw 5vw auto;
+  font-size: max(8vw, 3em);
+  rotate: -15deg;
+  will-change: filter, transform;
+}
+.name span {
+  display: inline-block;
+  color: var(--primary-c);
+}
