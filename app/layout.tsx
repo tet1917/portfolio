@@ -13,7 +13,7 @@ const montserrat = Montserrat({
 const zenKakuGothicNew = Zen_Kaku_Gothic_New({
   variable: "--font-zen-kaku-gothic-new",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["300", "400", "500"],
 });
 
 export const metadata: Metadata = {

@@ -1,17 +1,32 @@
 .commonHeading {
+  --fz: max(8vw, 3em);
+  --indent: calc(-5vw - var(--fz) * .47);
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
   font-weight: normal;
-  margin-left: calc(1ch + 8vw * .47 )
+  margin-left: calc(var(--indent) * -1);
 }
 .commonHeading span {
-  margin-left:  calc(-1ch - 8vw * .5);
-  font-size: 8vw;
+  margin-left: var(--indent);
+  font-size: var(--fz);
   text-transform: uppercase;
   letter-spacing: 0.5ch;
+  text-indent: .5ch;
   font-weight: 600;
 }
 .commonHeading span::first-letter {
   color: var(--primary-c);
+}
+.right {
+  align-items: end;
+  margin-left: auto;
+  margin-right: calc(var(--indent) * -1);
+}
+.right span {
+  margin-left: auto;
+  margin-right: var(--indent);
+}
+.right span::first-letter {
+  color: #fff;
 }
