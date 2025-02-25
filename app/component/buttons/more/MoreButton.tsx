@@ -5,7 +5,12 @@ import styles from "./moreButton.module.css";
 
 type MoreButtonProps = {
   href: string,
+  text?: string
 }
-export const MoreButton = ({href} : MoreButtonProps) => {
-  return <Link href={href} className={styles.more}>More</Link>;
+export const MoreButton = ({href, text = 'more'} : MoreButtonProps) => {
+  return (
+    <Link href={href} className={styles.more}>
+      {text}
+    </Link>
+  );
 };
