@@ -13,3 +13,6 @@ export const Heading = ({ ja, en, isRight }: HeadingProps) => (
     {ja}
   </h2>
 );
+
+
+
