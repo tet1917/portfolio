@@ -1,5 +1,6 @@
 import { ParallaxImage } from "./ParallaxImage";
 import styles from "./parallax.module.css";
+const { parallax } = styles;
 
 const images = [
   { src: "/about/1.jpg", speed: 3 },
@@ -14,7 +15,7 @@ const images = [
 
 export const Parallax = () => {
   return (
-    <div className={styles.parallax}>
+    <div className={parallax}>
       {images.map((image, i) => (
         <ParallaxImage key={i} {...image} />
       ))}

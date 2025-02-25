@@ -1,0 +1,21 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 700px);
+  margin-inline: auto;
+}
+.list article {
+  padding-block: 2em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  border-bottom: 1px solid;
+  position: relative;
+}
+.list a {
+  position: absolute;
+  inset: 0;
+}
+.list time {
+  width: max(30%, 10em);
+}
