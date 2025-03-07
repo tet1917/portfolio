@@ -4,8 +4,10 @@
   font-size: max(8vw, 3em);
   rotate: -15deg;
   will-change: filter, transform;
+  filter: drop-shadow(5px 5px 10px #fff) drop-shadow(2px 2px 4px #fff);
 }
 .name span {
   display: inline-block;
   color: var(--primary-c);
+  color: #333;
 }

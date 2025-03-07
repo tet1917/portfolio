@@ -1,0 +1,31 @@
+.hero {
+  height: 44vh;
+  padding-inline: 10vw;
+  display: grid;
+  align-items: end;
+}
+.hero h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.split {
+  overflow: hidden;
+  font-size: max(8vw, 3em);
+  text-transform: uppercase;
+}
+.split span {
+  display: inline-block;
+  translate: 0 100%;
+  animation: appear .6s forwards;
+}
+@keyframes appear {
+  to {
+    translate: 0;
+  }
+}
+.title {
+  font-weight: 600;
+  font-size: 1.2em;
+  color: var(--primary-c);
+}

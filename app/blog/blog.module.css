@@ -1,0 +1,48 @@
+.list {
+  width: min(100%, 1000px);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: max(8vw, 60px) 5vw;
+}
+.list article {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: max(30%, 200px) 1fr auto;
+  gap: 1em 2em;
+  background-color: var(--bg-c);
+  padding-right: max(3vw, 1em);
+}
+.list img {
+  grid-area: 1/1/3/2;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.list article:after {
+  grid-area: 1/3/3/4;
+  align-self: center;
+  color: var(--primary-c);
+  content: "";
+  width: 10px;
+  aspect-ratio: 1;
+  rotate: 45deg;
+  border-top: 2px solid;
+  border-right: 2px solid;
+}
+.list a {
+  position: absolute;
+  inset: 0;
+}
+.list time {
+  grid-area: 1/2/2/3;
+  align-self: end;
+}
+.list h2 {
+  grid-area: 2/2/3/3;
+  font-weight: 500;
+}

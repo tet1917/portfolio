@@ -1,10 +1,10 @@
-import { getDevelopment } from "@/libs/api";
+import { getArticles } from "@/libs/api";
 import React from "react";
 import { DevArticle } from "../types/types";
 import Image from "next/image";
 
 const page = async () => {
-  const { data } = await getDevelopment();
+  const { data } = await getArticles('developments');
   const articles: DevArticle[] = data.contents;
 
   return (
@@ -12,7 +12,7 @@ const page = async () => {
       {articles.map((article) => {
         const { title, thumbnail, createdAt } = article;
         return (
-          <article>
+          <article key={article.id}>
             <p>{title}</p>
             <Image
               src={thumbnail.url}

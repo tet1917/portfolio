@@ -36,6 +36,8 @@ html {
 
 :root {
   --primary-c: #73a4c2;
+  --bg-c: #f2f5f6;
+  --header-h: 80px;
 }
 
 body {

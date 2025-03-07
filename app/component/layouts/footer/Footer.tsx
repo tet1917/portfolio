@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
+import styles from "./footer.module.css";
+const { footer } = styles;
 
-const Footer = () => {
+export const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
-
-export default Footer
+    <footer className={footer}>
+      <p>© tetsu kazui</p>
+    </footer>
+  );
+};

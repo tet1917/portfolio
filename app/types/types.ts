@@ -1,13 +1,14 @@
-export type DevArticle = {
+export type PortfolioType = {
   id: string;
   title: string;
-  thumbnail: {
+  description: string;
+  url?: string;
+  thumbnail?: {
     url: string;
     height: number;
     width: number;
   };
   tags: string[];
-  createdAt: string;
 };
 
 export type BlogArticle = {
@@ -21,3 +22,5 @@ export type BlogArticle = {
   createdAt: string;
   detail: string;
 };
+
+export type CategoryType = "works" | "developments";

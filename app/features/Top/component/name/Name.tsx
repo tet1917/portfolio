@@ -3,7 +3,7 @@
 import { nameFont } from "@/app/utils/fonts";
 import { motion } from "framer-motion";
 import styles from "./name.module.css";
-
+const { name } = styles;
 
 export const Name = ({ text }: { text: string }) => {
   const letters = text.split("");
@@ -17,8 +17,13 @@ export const Name = ({ text }: { text: string }) => {
   };
 
   const letterVariants = {
-    hidden: { opacity: 0, y: -30 , filter: 'blur(10px)'},
-    visible: { opacity: 1, y: 0, filter: 'blur(0)',transition: { duration: 1 } },
+    hidden: { opacity: 0, y: -30, filter: "blur(10px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0)",
+      transition: { duration: 1 },
+    },
   };
 
   return (
@@ -26,7 +31,7 @@ export const Name = ({ text }: { text: string }) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className={`${nameFont.className} ${styles.name}`}
+      className={`${nameFont.className} ${name}`}
     >
       {letters.map((char, i) => (
         <motion.span key={i} variants={letterVariants}>

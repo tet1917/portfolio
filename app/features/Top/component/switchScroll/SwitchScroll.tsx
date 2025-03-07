@@ -3,8 +3,8 @@
 import { MoreButton } from "@/app/component/buttons/more/MoreButton";
 import { motion } from "framer-motion";
 import styles from "./switchScroll.module.css";
-
-const categories = ["works", "development"];
+const { item, box, body, container, slider } = styles;
+const categories = ["works", "developments"];
 
 type CategoryCardProps = {
   category: string;
@@ -15,8 +15,8 @@ const CategoryCard = ({ category, i }: CategoryCardProps) => {
   const isFirst = i === 0;
 
   return (
-    <div className={styles.item}>
-      <div className={styles.box}>
+    <div className={item}>
+      <div className={box}>
         <motion.img
           src={`/portfolio/${category}.jpg`}
           alt={category}
@@ -26,7 +26,7 @@ const CategoryCard = ({ category, i }: CategoryCardProps) => {
         ></motion.img>
       </div>
       <motion.div
-        className={styles.body}
+        className={body}
         initial={{ y: isFirst ? "30vh" : "-30vh" }}
         whileInView={{ y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
@@ -40,8 +40,8 @@ const CategoryCard = ({ category, i }: CategoryCardProps) => {
 
 export const SwitchScroll = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.slider}>
+    <div className={container} data-lenis-prevent>
+      <div className={slider}>
         {categories.map((category, i) => (
           <CategoryCard key={i} i={i} category={category} />
         ))}

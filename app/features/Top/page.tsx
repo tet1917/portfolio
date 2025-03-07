@@ -9,7 +9,7 @@ import { SwitchScroll } from "./component/switchScroll/SwitchScroll";
 import Image from "next/image";
 import { TopBlogList } from "./component/topBlog/TopBlogList";
 
-const Top = () => {
+export const Top = () => {
   return (
     <>
       <div className={styles.sns}>
@@ -36,7 +36,7 @@ const Top = () => {
       </section>
 
       <section className={styles.portfolio}>
-        <Image src="/about/9.jpg" alt="" width={1000} height={700} />
+        <Image src="/about/11.webp" alt="" width={1000} height={700} />
         <Image src="/about/10.jpg" alt="" width={600} height={600} />
         <Heading ja={"実績"} en={"portfolio"} isRight></Heading>
         <div className={styles.body}>
@@ -61,5 +61,3 @@ const Top = () => {
     </>
   );
 };
-
-export default Top;
