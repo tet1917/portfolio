@@ -7,8 +7,12 @@ import { Time } from "@/app/component/Time";
 
 const { detailBlog, box, thumbnailImage, bg, container, body } = styles;
 
-const DetailBlog = async ({ params }: { params: { contentId: string } }) => {
-  const contentId = params.contentId;
+const DetailBlog = async ({
+  params,
+}: {
+  params: Promise<{ contentId: string }>;
+}) => {
+  const {contentId} = await params;
   const { data } = await getDetailBlog(contentId);
   const { title, createdAt, thumbnail, detail } = data;
   const reactElement = parse(detail);

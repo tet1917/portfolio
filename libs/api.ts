@@ -1,3 +1,5 @@
+"use server";
+
 import { CategoryType } from "@/app/types/types";
 import { client } from "./client";
 

@@ -1,13 +1,13 @@
 import React from "react";
 import { FaXTwitter, FaInstagram, FaGithub } from "react-icons/fa6";
 import styles from "./top.module.css";
-import { Name } from "./component/name/Name";
-import { Parallax } from "./component/parallax/Parallax";
 import { Heading } from "../../component/heading/Heading";
 import { MoreButton } from "../../component/buttons/more/MoreButton";
-import { SwitchScroll } from "./component/switchScroll/SwitchScroll";
 import Image from "next/image";
 import { TopBlogList } from "./component/topBlog/TopBlogList";
+import { Name } from "./component/name/Name";
+import { SwitchScroll } from "./component/switchScroll/SwitchScroll";
+import { Parallax } from "./component/parallax/Parallax";
 
 export const Top = () => {
   return (
@@ -42,12 +42,9 @@ export const Top = () => {
         <div className={styles.body}>
           <h3>ベストよりもベターな選択</h3>
           <p>
-            完璧を追い求めるよりも、
-            <br />
-            その時点での最善を選び取る。
-            <br />
-            それを積み重ねることで、
-            <br />
+            完璧を追い求めるよりも、<br />
+            その時点での最善を選び取る。<br />
+            それを積み重ねることで、<br />
             結果的により良い未来が生まれると信じています。
           </p>
         </div>
