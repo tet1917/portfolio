@@ -32,9 +32,9 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${montserrat.variable} ${zenKakuGothicNew.variable}`}>
         <Header />
-        <LenisProvider>
-          <main>{children}</main>
-        </LenisProvider>
+        <main>
+          <LenisProvider>{children}</LenisProvider>
+        </main>
         <Footer />
       </body>
     </html>

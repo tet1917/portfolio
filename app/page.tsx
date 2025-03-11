@@ -1,8 +1,3 @@
-import {Top} from "./features/top/page";
-export default async function Home() {
-  return (
-    <div>
-      <Top />
-    </div>
-  );
-}
+import { Top } from "./features/top/Top";
+const Home = async () => <Top />;
+export default Home;

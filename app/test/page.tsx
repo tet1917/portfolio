@@ -1,11 +1,11 @@
-import { getArticles } from "@/libs/api";
+import { getBlog } from "@/libs/api";
 import React from "react";
-import { DevArticle } from "../types/types";
+import { BlogArticle } from "../types/types";
 import Image from "next/image";
 
 const page = async () => {
-  const { data } = await getArticles('developments');
-  const articles: DevArticle[] = data.contents;
+  const { data } = await getBlog();
+  const articles: BlogArticle[] = data.contents;
 
   return (
     <div>
