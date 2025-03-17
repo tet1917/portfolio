@@ -1,0 +1,31 @@
+.stepsWrapper {
+  padding: max(8vw, 60px) 5vw 0;
+}
+.stepsArea {
+  width: min(100%, 600px);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: num 0;
+  gap: 1em;
+  padding-bottom: max(5vw, 50px);
+}
+
+.stepsArea span {
+  flex: 1;
+  padding-top: 1em;
+  border-top: 2px solid;
+  counter-increment: num 1;
+  display: flex;
+  align-items: baseline;
+  gap: .6em;
+  color: #ddd;
+}
+.stepsArea span::before {
+  content: counter(num) '.';
+}
+
+.stepsArea .active {
+  color: #333;
+  font-weight: 500;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import { LowerHero } from "../component/lowerHero/LowerHero";
+import { LowerHero } from "../components/lowerHero/LowerHero";
 import { BlogArticle } from "../types/types";
 import { getBlog } from "@/libs/api";
 import { Blog } from "./Blog";

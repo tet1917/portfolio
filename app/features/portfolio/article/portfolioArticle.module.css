@@ -122,5 +122,5 @@
   transition: color .2s;
 }
 .linkUrl:hover {
-  color: #6167ff;
+  color: var(--link-c);
 }

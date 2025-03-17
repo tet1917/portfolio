@@ -1,4 +1,4 @@
-import { TagPage } from "@/app/component/portfolioPage/TagPage";
+import { TagPage } from "@/app/features/portfolio/TagPage";
 import React from "react";
 
 const DevelopmentsTagPage = async ({

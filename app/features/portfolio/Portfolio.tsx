@@ -2,17 +2,17 @@ import React from "react";
 import styles from "./portfolio.module.css";
 import { getArticles } from "@/libs/api";
 import { CategoryType, PortfolioType } from "@/app/types/types";
-import { LowerHero } from "../lowerHero/LowerHero";
 import { Categories } from "./categories/Categories";
 import { Tags } from "./tags/Tags";
 import { PortfolioArticle } from "./article/PortfolioArticle";
+import { LowerHero } from "@/app/components/lowerHero/LowerHero";
 const { cardLayout, sectionLayout } = styles;
 
-type PortfolioPageProps = {
+type PortfolioProps = {
   page: CategoryType;
 };
 
-export const PortfolioPage = async ({ page }: PortfolioPageProps) => {
+export const Portfolio = async ({ page }: PortfolioProps) => {
   const { data } = await getArticles(page);
   const articles: PortfolioType[] = data.contents;
 

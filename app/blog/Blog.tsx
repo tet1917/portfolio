@@ -1,8 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react'
-import { Time } from '../component/Time';
-import { BlogArticle } from '../types/types';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { Time } from "../components/Time";
+import { BlogArticle } from "../types/types";
 
 export const Blog = ({ id, title, createdAt, thumbnail }: BlogArticle) => {
   return (

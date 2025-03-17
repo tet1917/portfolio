@@ -1,7 +1,7 @@
 import { LowerHero } from "@/app/component/lowerHero/LowerHero";
 import styles from "./portfolio.module.css";
 import { Categories } from "@/app/component/portfolioPage/categories/Categories";
-import { CategoryType, PortfolioType } from "@/app/types/types";
+import { CategoryType, DevArticle } from "@/app/types/types";
 import { getArticles } from "@/libs/api";
 import { Tags } from "@/app/component/portfolioPage/tags/Tags";
 import { PortfolioArticle } from "@/app/component/portfolioPage/article/PortfolioArticle";
@@ -15,9 +15,9 @@ type TagPageProps = {
 
 export const TagPage = async ({ tag, page }: TagPageProps) => {
   const { data } = await getArticles(page);
-  const articles: PortfolioType[] = data.contents;
+  const articles: DevArticle[] = data.contents;
   const filteredArticles = articles.filter((article) =>
-    article.tags.includes(tag)
+    article.tags?.includes(tag)
   );
   return (
     <>

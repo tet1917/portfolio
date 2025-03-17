@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat, Zen_Kaku_Gothic_New } from "next/font/google";
 import "./globals.css";
-import { Header } from "./component/layouts/header/Header";
-import { LenisProvider } from "./component/layouts/lenis/LenisProvider";
-import { Footer } from "./component/layouts/footer/Footer";
+import { Header } from "./components/layouts/header/Header";
+import { LenisProvider } from "./components/layouts/lenis/LenisProvider";
+import { Footer } from "./components/layouts/footer/Footer";
 // import { MomentumScroll } from "./component/MomentumScroll";
 
 const montserrat = Montserrat({
