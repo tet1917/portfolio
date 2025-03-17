@@ -37,6 +37,7 @@ html {
 :root {
   --primary-c: #73a4c2;
   --bg-c: #f2f5f6;
+  --link-c: #6890ff;
   --header-h: 80px;
 }
 
@@ -44,6 +45,9 @@ body {
   color: #333;
   font-family: var(--font-montserrat), var(--font-zen-kaku-gothic-new), sans-serif;
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 section {
@@ -55,7 +59,7 @@ section {
  */
 
 main {
-  display: block;
+  flex: 1;
 }
 
 /* Vertical rhythm */

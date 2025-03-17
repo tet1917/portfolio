@@ -69,7 +69,7 @@
   height: auto;
   aspect-ratio: 8/5;
   z-index: -1;
-  /* filter: contrast(0.9); */
+  filter: contrast(1.1);
 }
 .portfolio > img:nth-child(2) {
   inset: 0 0 auto;

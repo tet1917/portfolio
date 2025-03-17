@@ -1,7 +1,7 @@
 import React from 'react'
-import { PortfolioPage } from '../component/portfolioPage/PortfolioPage'
+import { Portfolio } from '../features/portfolio/Portfolio';
 
 const DevelopmentsPage = () => (
-  <PortfolioPage page={'developments'}/>
+  <Portfolio page={'developments'}/>
 )
 export default DevelopmentsPage;

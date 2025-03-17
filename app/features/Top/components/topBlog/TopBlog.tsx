@@ -1,4 +1,4 @@
-import { Time } from "@/app/component/Time";
+import { Time } from "@/app/components/Time";
 import { BlogArticle } from "@/app/types/types";
 import Link from "next/link";
 import React from "react";

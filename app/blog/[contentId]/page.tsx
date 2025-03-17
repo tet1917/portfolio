@@ -3,7 +3,8 @@ import Image from "next/image";
 import React from "react";
 import styles from "./detailBlog.module.css";
 import parse from "html-react-parser";
-import { Time } from "@/app/component/Time";
+import { Time } from "@/app/components/Time";
+import { MoreButton } from "@/app/components/buttons/more/MoreButton";
 
 const { detailBlog, box, thumbnailImage, bg, container, body } = styles;
 
@@ -12,7 +13,7 @@ const DetailBlog = async ({
 }: {
   params: Promise<{ contentId: string }>;
 }) => {
-  const {contentId} = await params;
+  const { contentId } = await params;
   const { data } = await getDetailBlog(contentId);
   const { title, createdAt, thumbnail, detail } = data;
   const reactElement = parse(detail);
@@ -42,6 +43,7 @@ const DetailBlog = async ({
           <div className={body}>{reactElement}</div>
         </div>
       </article>
+      <MoreButton href={"/blog"} text={"all"} />
     </section>
   );
 };
