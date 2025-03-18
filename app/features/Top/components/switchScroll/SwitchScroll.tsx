@@ -22,7 +22,7 @@ const CategoryCard = ({ category, i }: CategoryCardProps) => {
     <div className={item} data-lenis-prevent>
       <div className={box}>
         <Image
-          src={`/portfolio/${category}.jpg`}
+          src={`/portfolio/${category}.webp`}
           alt={category}
           width={1920}
           height={1080}

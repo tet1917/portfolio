@@ -1,14 +1,14 @@
 "use client";
 
-import { CategoryType, PortfolioType} from "@/app/types/types";
+import { CategoryType, PortfolioType } from "@/app/types/types";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Modal } from "./Modal";
 import styles from "./portfolioArticle.module.css";
-const { card, tagsList } = styles;
+const { card, tagsList, box } = styles;
 
-type PortfolioArticleProps =  PortfolioType & { page: CategoryType };
+type PortfolioArticleProps = PortfolioType & { page: CategoryType };
 
 export const PortfolioArticle = (props: PortfolioArticleProps) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,12 +18,14 @@ export const PortfolioArticle = (props: PortfolioArticleProps) => {
     <li className={card}>
       <button type="button" onClick={modalOpenHandler}></button>
       <article>
-        <Image
-          src={thumbnail ? thumbnail.url : "/no-image.svg"}
-          width={thumbnail ? thumbnail.width : 1000}
-          height={thumbnail ? thumbnail.height : 600}
-          alt={title}
-        />
+        <div className={box}>
+          <Image
+            src={thumbnail ? thumbnail.url : "/no-image.svg"}
+            width={thumbnail ? thumbnail.width : 1000}
+            height={thumbnail ? thumbnail.height : 600}
+            alt={title}
+          />
+        </div>
         {page === "developments" && (
           <div className={tagsList}>
             {tags.map((tag) => (
