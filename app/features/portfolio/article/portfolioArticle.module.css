@@ -10,6 +10,7 @@
 .card > button {
   position: absolute;
   inset: 0;
+  z-index: 2;
 }
 .card article {
   display: flex;
@@ -29,7 +30,7 @@
   font-weight: 600;
   transition: color .3s;
 }
-.card:hover h2 {
+.card:hover article h2 {
   color: var(--primary-c);
 }
 

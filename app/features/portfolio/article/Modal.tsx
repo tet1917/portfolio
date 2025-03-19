@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./portfolioArticle.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import parse from "html-react-parser";
-import { CategoryType,  PortfolioType } from "@/app/types/types";
+import { CategoryType, PortfolioType } from "@/app/types/types";
 const { modal, container, open, body, tagsList, linkUrl } = styles;
 
-type ModalProps =  PortfolioType & {
-    isOpen: boolean;
-    modalOpenHandler: () => void;
-    page: CategoryType;
-  };
+type ModalProps = PortfolioType & {
+  isOpen: boolean;
+  modalOpenHandler: () => void;
+  page: CategoryType;
+};
 
 export const Modal = (props: ModalProps) => {
   const {
@@ -25,9 +25,24 @@ export const Modal = (props: ModalProps) => {
   } = props;
   const reactElement = parse(description);
 
+  const handleClose = () => {
+    modalOpenHandler();
+    setTimeout(() => (modalRef.current!.scrollTop = 0), 400);
+  };
+
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  const handleCloseOverlay = (e: React.MouseEvent<HTMLDivElement>) => {
+    modalRef.current!.contains(e.target as Node) || handleClose()
+  };
+
   return (
-    <div className={`${modal} ${isOpen ? open : ""}`} data-lenis-prevent>
-      <div className={container}>
+    <div
+      className={`${modal} ${isOpen ? open : ""}`}
+      data-lenis-prevent
+      onClick={handleCloseOverlay}
+    >
+      <div className={container} ref={modalRef}>
         <Image
           src={thumbnail ? thumbnail.url : "/no-image.svg"}
           width={thumbnail ? thumbnail.width : 1000}
@@ -47,18 +62,13 @@ export const Modal = (props: ModalProps) => {
         )}
 
         {url && (
-          <a
-            href={`https://${url}`}
-            target="_blank"
-            rel="noreferrer"
-            className={linkUrl}
-          >
+          <a href={url} target="_blank" rel="noreferrer" className={linkUrl}>
             {url}
           </a>
         )}
 
         <div className={body}>{reactElement}</div>
-        <button type="button" onClick={modalOpenHandler}>
+        <button type="button" onClick={handleClose}>
           close
         </button>
       </div>
