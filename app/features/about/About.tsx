@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./about.module.css";
-import Self from "./component/self/Self";
-import Skill from "./component/skill/Skill";
+import Self from "./components/self/Self";
+import Skill from "./components/skill/Skill";
 import { skillItemData } from "./itemData/skillData";
 import { selfInfoItem } from "./itemData/selfData";
 import { Heading } from "@/app/components/heading/Heading";
