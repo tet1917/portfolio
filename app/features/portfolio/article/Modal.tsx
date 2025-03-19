@@ -33,7 +33,12 @@ export const Modal = (props: ModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   const handleCloseOverlay = (e: React.MouseEvent<HTMLDivElement>) => {
-    modalRef.current!.contains(e.target as Node) || handleClose()
+    if(!modalRef.current) {
+      return
+    }
+    if(!modalRef.current.contains(e.target as Node)){
+      handleClose()
+    }
   };
 
   return (
