@@ -1,6 +1,6 @@
 import React from 'react'
-import { LowerHero } from '../component/lowerHero/LowerHero'
 import About from '../features/about/About'
+import { LowerHero } from '../components/lowerHero/LowerHero'
 
 function aboutPage() {
   return (

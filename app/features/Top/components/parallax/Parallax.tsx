@@ -4,12 +4,12 @@ const { parallax } = styles;
 
 const images = [
   { src: "/about/1.webp", speed: 3 },
-  { src: "/about/2.jpg", speed: 2 },
+  { src: "/about/2.webp", speed: 2 },
   { src: "/about/3.webp", speed: 1.5 },
   { src: "/about/4.webp", speed: 2.5 },
   { src: "/about/5.webp", speed: 1 },
-  { src: "/about/6.jpg", speed: 1 },
-  { src: "/about/7.jpg", speed: 1 },
+  { src: "/about/6.webp", speed: 1 },
+  { src: "/about/7.webp", speed: 1 },
   { src: "/about/8.webp", speed: 0.8 },
 ];
 

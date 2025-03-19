@@ -1,6 +1,12 @@
 .card {
   position: relative;
 }
+.box {
+  margin-bottom: 0.2em;
+  border-radius: 10px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
 .card > button {
   position: absolute;
   inset: 0;
@@ -10,17 +16,23 @@
   flex-direction: column;
   gap: 0.6em;
 }
-.card article > img {
+.box img {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 0.2em;
-  border-radius: 10px;
+  transition: scale 0.4s;
+}
+.card:hover .box img {
+  scale: 1.1;
 }
 .card h2 {
   font-weight: 600;
+  transition: color .3s;
 }
+.card:hover h2 {
+  color: var(--primary-c);
+}
+
 .tagsList {
   display: flex;
   gap: 0.4em;
@@ -73,7 +85,7 @@
 }
 .modal h2 {
   font-size: 1.1em;
-  margin-bottom: .4rem;
+  margin-bottom: 0.4rem;
 }
 .open {
   opacity: 1;
@@ -119,7 +131,7 @@
 }
 .linkUrl {
   border-bottom: 1px solid currentColor;
-  transition: color .2s;
+  transition: color 0.2s;
 }
 .linkUrl:hover {
   color: var(--link-c);

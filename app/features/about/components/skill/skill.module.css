@@ -1,0 +1,47 @@
+
+.skillItem {
+    display: grid;
+    grid-template-areas:
+      "title"
+      "image"
+      "text";
+    gap: 1rem 5vw;
+}
+
+.skillItem h3 {
+    grid-area: title;
+    font-size: clamp(1.5rem,2vw,30px);
+    font-weight: 500;
+}
+
+.skillItem > img {
+    grid-area: image;
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    justify-self: center;
+}
+.skillItem p {
+    grid-area: text;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+/* PC表示時にレイアウト変更 */
+@media (width >= 768px) {
+    .skillItem {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "image title"
+        "image text";
+    }
+    .skillItem:nth-child(even) {
+        grid-template-areas:
+        "title image"
+        "text image";
+    }
+
+    .skillItem h3 {
+        align-self: end;
+    }
+
+}

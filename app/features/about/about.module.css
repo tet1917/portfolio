@@ -1,36 +1,35 @@
 /* self */
 
-
 .profile {
-    width: min(100%,1200px);
-    margin: 0 auto;
-    padding-bottom: 0;
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  padding-bottom: 0;
+}
+.profile h2 span {
+  color: var(--primary-c);
 }
 
 .selfList {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
-
 
 .self {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "image intro"
-    ;
-    margin: 0 auto;
-    gap: 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "image intro";
+  margin: 0 auto;
+  gap: 5vw;
 }
 .self > img {
-    grid-area: image;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 1rem;
-    box-shadow: 0 max(1vw,5px) max(2vw,10px) rgb(0 0 0 /0.3);
-    /*
+  grid-area: image;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 max(1vw, 5px) max(2vw, 10px) rgb(0 0 0 /0.3);
+  /*
     今はrgbaは使わず、rgbの,をはずしたものを使用。
     透明度に関しては/をつける。
     上記が現在推奨されている使い方。
@@ -38,31 +37,37 @@
 }
 
 .selfIntroduction {
-    margin-bottom: 5vw;
+  margin-bottom: 5vw;
+  display: flex;
+  gap: 5vw;
+}
+.selfIntroduction > * {
+  flex: 1;
 }
 
-.selfIntroduction > h2 {
-    font-size: max(2rem,32px);
-    font-weight: 600;
+.selfHead h2 {
+  font-size: max(2rem, 32px);
+  font-weight: 600;
+}
+.selfHead p {
+  margin-top: 1em;
 }
 
-.selfIntroduction > p {
-    margin-top: 1em;
-    line-height: 1.8;
-    font-size: clamp(1rem,1.3vw,20px);
+.selfIntroduction p {
+  line-height: 1.8;
 }
 
 .self ul {
-    grid-area: intro;
+  grid-area: intro;
 }
 
 /* skill */
 
 .skill ul {
-    display: flex;
-    flex-direction: column;
-    gap: max(5vw,50px);
-    width: min(100%,1200px);
-    margin-inline: auto;
-    margin-top: max(5vw,50px);
+  display: flex;
+  flex-direction: column;
+  gap: max(5vw, 50px);
+  width: min(100%, 1200px);
+  margin-inline: auto;
+  margin-top: max(5vw, 50px);
 }
