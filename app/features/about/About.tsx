@@ -50,7 +50,7 @@ const About = () => {
         <Heading ja="スキル" en="Skill" />
         <ul>
           {skillItemData.map((item) => (
-            <Skill {...item} key={item.title} />
+            <Skill {...item} key={item.title}/>
           ))}
         </ul>
       </section>

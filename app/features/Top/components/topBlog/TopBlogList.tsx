@@ -1,8 +1,8 @@
-import { TopBlog } from "./TopBlog";
 import styles from "./topBlog.module.css";
 import React from "react";
 import { BlogArticle } from "@/app/types/types";
 import { getHomeBlog } from "@/libs/api";
+import { TopBlog } from "./TopBlog";
 const { list } = styles;
 
 export const TopBlogList = async () => {
