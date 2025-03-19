@@ -1,0 +1,65 @@
+
+
+.selfButton {
+    background-color: var(--bg-c);
+    border-radius: 10px;
+    padding: 1em;
+    width: 100%;
+}
+
+.selfButton h3 {
+    display: flex;
+    gap: 0.4em;
+    font-size: clamp(1.4em, 1.8vw, 2em);
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.selfToggle {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .5s;
+}
+
+.selfToggle > div {
+    overflow: hidden;
+    display: flex;
+    padding-inline: 1em;
+}
+.selfToggle ul {
+    padding-top: 0.6em;
+    flex: 1;
+}
+.selfToggle li {
+    display: flex;
+    gap: .8em;
+    align-items: center;
+    line-height: 1.8;
+}
+.selfToggle li::before {
+    content: "";
+    width: .6em;
+    aspect-ratio: 1;
+    background-color: var(--primary-c);
+    border-radius: 50%;
+}
+.selfToggle img {
+    width: 50%;
+    aspect-ratio: 1;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0.6em;
+}
+
+.selfButton.isOpen .selfToggle {
+    grid-template-rows: 1fr;
+}
+
+.selfButton svg {
+    transition: rotate 0.5s;
+}
+
+.selfButton.isOpen svg {
+    rotate: 180deg;
+}

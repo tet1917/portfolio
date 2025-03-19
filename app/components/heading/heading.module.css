@@ -1,0 +1,38 @@
+.headingWrapper {
+  overflow: hidden;
+  width: 100vw;
+  margin-inline: calc((100vw - 100%) / -2);
+}
+
+.commonHeading {
+  --fz: max(8vw, 3rem);
+  --indent: calc(var(--fz) * 1.2);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-left: var(--indent);
+}
+.commonHeading span {
+  margin-left: calc(var(--indent) * -1);
+  font-size: var(--fz);
+  text-transform: uppercase;
+  letter-spacing: 0.5ch;
+  text-indent: .1ch;
+  font-weight: 600;
+}
+.commonHeading span::first-letter {
+  color: var(--primary-c);
+}
+.right {
+  align-items: end;
+  margin-left: auto;
+  margin-right: var(--indent);
+}
+.right span {
+  margin-left: auto;
+  margin-right: calc(var(--indent) * -1 - .5ch);
+}
+.right span::first-letter {
+  color: #fff;
+}

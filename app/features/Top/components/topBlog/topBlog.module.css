@@ -1,0 +1,46 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 700px);
+  margin-inline: auto;
+}
+.list li {
+  border-bottom: 2px solid var(--bg-c);
+  position: relative;
+}
+.list li::before {
+  position: absolute;
+  content: "";
+  inset: auto 0 -2px;
+  height: 2px;
+  background-color: var(--primary-c);
+  scale: 0 1;
+  transform-origin: right;
+  transition: scale .6s;
+}
+.list li:hover article {
+  translate: 1em;
+}
+.list li:hover::before {
+  scale: 1;
+  transform-origin: left;
+}
+
+.list article {
+  padding-block: 2em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  transition: translate 0.4s;
+}
+.list a {
+  position: absolute;
+  inset: 0;
+}
+.list time {
+  width: max(30%, 8em);
+}
+.list h3 {
+  flex: 1;
+  line-height: 1.6;
+}

@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 5vw;
+  height: var(--header-h);
+  align-items: center;
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  /* background-color: rgb(255 255 255/0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 4px 8px -2px rgb(0 0 0/0.1); */
+}
+.header nav {
+  display: flex;
+  width: max(40%, 400px);
+  justify-content: space-between;
+}
+.header a {
+  text-transform: uppercase;
+}

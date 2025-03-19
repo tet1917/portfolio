@@ -1,0 +1,163 @@
+.wrapper {
+  width: 100vw;
+  overflow-x: hidden;
+}
+.multiStep {
+  display: flex;
+  width: 300vw;
+  transition-property: translate, height;
+  transition-duration: 1s;
+  align-items: start;
+}
+.multiStep > section {
+  padding-top: 0;
+}
+.step2 {
+  translate: -100vw;
+}
+.step3 {
+  translate: -200vw;
+}
+.multiStep > * {
+  flex: 1;
+}
+
+.container {
+  width: min(100%, 600px);
+  margin-inline: auto;
+}
+.formArea {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.inputArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+.inputArea input,
+.inputArea textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5em 1em;
+}
+.inputArea input:focus,
+.inputArea textarea:focus {
+  outline: 2px solid var(--primary-c);
+  outline-offset: -1px;
+}
+
+.inputArea fieldset {
+  display: flex;
+  gap: 10%;
+}
+.radioBox, .checkBox {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.radioBox input, .checkBox input {
+  width: 1.6em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.radioBox > div, .checkBox > div {
+  position: relative;
+}
+.radioBox > div::before, .checkBox > div::before {
+  position: absolute;
+  content: "";
+  inset: 20%;
+  pointer-events: none;
+  border-radius: 50%;
+  background-color: #444;
+  scale: 0;
+  opacity: 0;
+  transition: scale 0.4s, opacity 1.4s;
+}
+.radioBox > div:has(input:checked)::before,
+.checkBox > div:has(input:checked)::before {
+  scale: 1;
+  opacity: 1;
+}
+.checkBox a {
+  border-bottom: 1px solid currentColor;
+  transition: color .2s;
+}
+.checkBox a:hover {
+  color: var(--link-c);
+}
+
+.required {
+  color: red;
+  display: inline-block;
+  margin-left: .4em;
+}
+.error {
+  color: red;
+}
+.button {
+  color: #fff;
+  background-color: #333;
+  display: block;
+  width: fit-content;
+  padding: 0.6em 2em;
+  border-radius: 6px;
+  transition: opacity 0.4s;
+}
+.button:hover {
+  opacity: 0.8;
+}
+.note .required {
+  margin-inline: 0 .4em;
+  
+}
+
+
+.confirm li {
+  display: flex;
+  flex-direction: column;
+  padding-block: 2em;
+  border-bottom: 1px solid #ddd;
+  gap: 0.4em;
+}
+.confirm h3 {
+  color: var(--primary-c);
+  font-weight: 500;
+}
+.buttons {
+  display: flex;
+  margin-top: max(5vw, 50px);
+  gap: max(5%, 1em);
+}
+.buttons button:first-child {
+  background-color: transparent;
+  border: 1px solid ;
+  color: #333;
+  transition: background-color .4s;
+}
+.buttons button:first-child:hover {
+  background-color: #eee;
+}
+
+.thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+.thanks svg {
+  font-size: 8em;
+  color: var(--primary-c);
+  stroke-width: 1.6px;
+}
+.thanks h2 {
+font-size: 1.2em;
+font-weight: 500;
+}
+.thanks p {
+  line-height: 1.8;
+}

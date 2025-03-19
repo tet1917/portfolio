@@ -7,8 +7,9 @@
     inset: 0;
     position: absolute;
     content: "";
-    background: url(/hero.jpeg) center/cover;
+    background: url(/hero.webp) center/cover;
     opacity: 0.8;
+    /* scale: -1 1; */
   }
 }
 .scroll {
@@ -53,14 +54,48 @@
   font-size: 30px;
   z-index: 100;
 }
-.name {
-  position: absolute;
-  inset: auto 10vw 5vw auto;
-  font-size: max(8vw, 3em);
-  rotate: -15deg;
-  will-change: filter, transform;
+
+.portfolio {
+  position: relative;
+  padding-top: max(15vw, 120px);
 }
-.name span {
-    display: inline-block;
-    color: var(--primary-c);
+.portfolio > img {
+  position: absolute;
+  object-fit: cover;
+}
+.portfolio > img:first-child {
+  inset: 5vw auto auto 0;
+  width: 50%;
+  height: auto;
+  aspect-ratio: 8/5;
+  z-index: -1;
+  filter: contrast(1.1);
+}
+.portfolio > img:nth-child(2) {
+  inset: 0 0 auto;
+  width: 46%;
+  height: auto;
+  aspect-ratio: 1;
+  margin-inline: auto;
+  z-index: -2;
+  scale: -1 1;
+  opacity: 0.6;
+}
+
+.portfolio .body {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  margin-block: max(8vw, 60px) max(10vw, 80px);
+  width: fit-content;
+  margin-left: auto;
+}
+.portfolio h3 {
+  font-size: max(2.4vw, 1.3em);
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+.portfolio p {
+  font-size: max(1.3vw, 1em);
+  line-height: 2.2;
 }
