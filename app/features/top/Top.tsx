@@ -37,7 +37,7 @@ export const Top = () => {
 
       <section className={styles.portfolio}>
         <Image src="/about/11.webp" alt="" width={1000} height={700} />
-        <Image src="/about/10.jpg" alt="" width={600} height={600} />
+        <Image src="/about/10.webp" alt="" width={600} height={600} />
         <Heading ja={"実績"} en={"portfolio"} isRight></Heading>
         <div className={styles.body}>
           <h3>ベストよりもベターな選択</h3>
