@@ -8,14 +8,12 @@ type SkillProps = {
   text: string;
 };
 
-const Skill = ({ img, title, text }: SkillProps) => {
+export const Skill = ({ img, title, text }: SkillProps) => {
   return (
-    <li className={styles.skillItem} key={title}>
+    <li className={styles.skillItem}>
       <Image src={img} width={500} height={350} alt={title} />
       <h3>{title}</h3>
       <p>{text}</p>
     </li>
   );
 };
-
-export default Skill;

@@ -4,15 +4,9 @@
   width: min(100%, 1200px);
   margin: 0 auto;
   padding-bottom: 0;
-}
-.profile h2 span {
-  color: var(--primary-c);
-}
-
-.selfList {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+  & h2 span {
+    color: var(--primary-c);
+  }
 }
 
 .self {
@@ -21,44 +15,80 @@
   grid-template-areas: "image intro";
   margin: 0 auto;
   gap: 5vw;
-}
-.self > img {
-  grid-area: image;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 1rem;
-  box-shadow: 0 max(1vw, 5px) max(2vw, 10px) rgb(0 0 0 /0.3);
-  /*
+  & > img {
+    grid-area: image;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 max(1vw, 5px) max(2vw, 10px) rgb(0 0 0 /0.3);
+    /*
     今はrgbaは使わず、rgbの,をはずしたものを使用。
     透明度に関しては/をつける。
     上記が現在推奨されている使い方。
      */
+  }
+}
+
+.selfList {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  grid-area: intro;
 }
 
 .selfIntroduction {
   margin-bottom: 5vw;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 5vw;
-}
-.selfIntroduction > * {
-  flex: 1;
+  & > img {
+    grid-area: 1/1/2/2;
+    z-index: -1;
+    width: 50%;
+    height: auto;
+    place-self: end;
+    opacity: 0.3;
+    filter: hue-rotate(180deg);
+  }
 }
 
-.selfHead h2 {
-  font-size: max(2rem, 32px);
-  font-weight: 600;
+.selfHead {
+  grid-area: 1/1/2/2;
+  & h2 {
+    font-size: max(2vw, 1.9em);
+    font-weight: 600;
+  }
+  & dl {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
 }
-.selfHead p {
-  margin-top: 1em;
+.row {
+  display: flex;
+  align-items: baseline;
+  & dt {
+    width: 4em;
+    font-weight: normal;
+    text-transform: capitalize;
+    &::first-letter {
+      color: var(--primary-c);
+      font-weight: 500;
+      font-size: max(1.5vw, 1em);
+    }
+  }
+  & dd {
+    flex: 1;
+    &::before {
+      content: "：";
+    }
+  }
 }
 
 .selfIntroduction p {
   line-height: 1.8;
-}
-
-.self ul {
-  grid-area: intro;
 }
 
 /* skill */

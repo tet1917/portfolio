@@ -9,7 +9,6 @@
     content: "";
     background: url(/hero.webp) center/cover;
     opacity: 0.8;
-    /* scale: -1 1; */
   }
 }
 .scroll {
@@ -57,45 +56,57 @@
 
 .portfolio {
   position: relative;
-  padding-top: max(15vw, 120px);
-}
-.portfolio > img {
-  position: absolute;
-  object-fit: cover;
-}
-.portfolio > img:first-child {
-  inset: 5vw auto auto 0;
-  width: 50%;
-  height: auto;
-  aspect-ratio: 8/5;
-  z-index: -1;
-  filter: contrast(1.1);
-}
-.portfolio > img:nth-child(2) {
-  inset: 0 0 auto;
-  width: 46%;
-  height: auto;
-  aspect-ratio: 1;
-  margin-inline: auto;
-  z-index: -2;
-  scale: -1 1;
-  opacity: 0.6;
+  padding-top: max(15vw, 80px);
+  & > img {
+    position: absolute;
+    object-fit: cover;
+    &:first-child {
+      inset: 5vw auto auto 0;
+      width: 50%;
+      height: auto;
+      aspect-ratio: 8/5;
+      z-index: -1;
+      filter: contrast(1.1);
+    }
+    &:nth-child(2) {
+      inset: 0 0 auto;
+      width: 46%;
+      height: auto;
+      aspect-ratio: 1;
+      margin-inline: auto;
+      z-index: -2;
+      scale: -1 1;
+      opacity: 0.6;
+    }
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    margin-block: max(8vw, 60px) max(10vw, 50px);
+    width: fit-content;
+    margin-left: auto;
+  }
+  & h3 {
+    font-size: max(2.4vw, 1.3em);
+    letter-spacing: 0.1em;
+    font-weight: 400;
+  }
+  & p {
+    font-size: max(1.3vw, 1em);
+    line-height: 2.2;
+  }
 }
 
-.portfolio .body {
-  display: flex;
-  flex-direction: column;
-  gap: 3em;
-  margin-block: max(8vw, 60px) max(10vw, 80px);
-  width: fit-content;
-  margin-left: auto;
+.blog {
+  padding-top: 0;
 }
-.portfolio h3 {
-  font-size: max(2.4vw, 1.3em);
-  letter-spacing: 0.1em;
-  font-weight: 400;
-}
-.portfolio p {
-  font-size: max(1.3vw, 1em);
-  line-height: 2.2;
+
+@media (orientation: portrait) {
+  .hero {
+    height: 100vw;
+  }
+  .portfolio .body {
+    gap: 2em;
+  }
 }

@@ -39,6 +39,12 @@ html {
   --bg-c: #f2f5f6;
   --link-c: #6890ff;
   --header-h: 80px;
+  @media (width < 768px) {
+    font-size: 0.9em;
+  }
+  @media (width < 510px) {
+    --header-h: 60px;
+  }
 }
 
 body {

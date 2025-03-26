@@ -3,7 +3,5 @@ import { Top } from "./features/top/Top";
 // export default Home;
 
 export default function Home() {
-    return (
-        <Top />
-    )
+  return <Top />;
 }
