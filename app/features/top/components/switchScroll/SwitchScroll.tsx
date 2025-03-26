@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import styles from "./switchScroll.module.css";
 import Image from "next/image";
 import { useRef } from "react";
+import { useIsResponsive } from "@/app/hooks/isResponsive";
 const { item, box, body, container, slider, view, active } = styles;
 const categories = ["works", "developments"];
 
@@ -17,9 +18,13 @@ const CategoryCard = ({ category, i }: CategoryCardProps) => {
   const isFirst = i === 0;
   const viewRef = useRef(null);
   const inView = useInView(viewRef);
+  const yRatio = useIsResponsive(768) ? 0 : 30;
 
   return (
-    <div className={item} data-lenis-prevent>
+    <div
+      className={item}
+      {...(!useIsResponsive(768) ? { "data-lenis-prevent": "true" } : {})}
+    >
       <div className={box}>
         <Image
           src={`/portfolio/${category}.webp`}
@@ -31,7 +36,7 @@ const CategoryCard = ({ category, i }: CategoryCardProps) => {
       </div>
       <motion.div
         className={body}
-        initial={{ y: isFirst ? "30vh" : "-30vh" }}
+        initial={{ y: isFirst ? `${yRatio}vmin` : `-${yRatio}vmin` }}
         whileInView={{ y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         ref={viewRef}

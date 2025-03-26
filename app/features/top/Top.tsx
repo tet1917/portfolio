@@ -8,11 +8,12 @@ import { TopBlogList } from "./components/topBlog/TopBlogList";
 import { Name } from "./components/name/Name";
 import { SwitchScroll } from "./components/switchScroll/SwitchScroll";
 import { Parallax } from "./components/parallax/Parallax";
+const {sns, hero, scroll, about, portfolio, body, blog } = styles
 
 export const Top = () => {
   return (
     <>
-      <div className={styles.sns}>
+      <div className={sns}>
         <a target="_blank" href="">
           <FaInstagram />
         </a>
@@ -24,22 +25,22 @@ export const Top = () => {
         </a>
       </div>
 
-      <section className={styles.hero}>
-        <p className={styles.scroll}>Scroll</p>
+      <section className={hero}>
+        <p className={scroll}>Scroll</p>
         <Name text="Tetsu Kazui" />
       </section>
 
-      <section className={styles.about}>
+      <section className={about}>
         <Heading ja={"僕について"} en={"about"}></Heading>
         <Parallax />
         <MoreButton href={"/about"}></MoreButton>
       </section>
 
-      <section className={styles.portfolio}>
+      <section className={portfolio}>
         <Image src="/about/11.webp" alt="" width={1000} height={700} />
         <Image src="/about/10.webp" alt="" width={600} height={600} />
         <Heading ja={"実績"} en={"portfolio"} isRight></Heading>
-        <div className={styles.body}>
+        <div className={body}>
           <h3>ベストよりもベターな選択</h3>
           <p>
             完璧を追い求めるよりも、
@@ -54,7 +55,7 @@ export const Top = () => {
         <SwitchScroll />
       </section>
 
-      <section className={styles.blog}>
+      <section className={blog}>
         <Heading ja={"ブログ"} en={"blog"}></Heading>
         <TopBlogList />
       </section>

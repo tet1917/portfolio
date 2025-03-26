@@ -1,4 +1,4 @@
-.more{
+.more {
   display: flex;
   width: fit-content;
   gap: 2em;
@@ -7,16 +7,25 @@
   margin: max(5vw, 50px) 0 0 auto;
   width: 10em;
   text-transform: capitalize;
+  &::after {
+    content: "";
+    width: 3em;
+    height: 0.4em;
+    border-bottom: 1px solid;
+    border-right: 1.5px solid;
+    transform: skew(45deg);
+    transition: width 0.4s;
+  }
+  @media (any-hover: hover) {
+    &:hover::after {
+      width: 4em;
+    }
+  }
 }
-.more::after {
-  content: "";
-  width: 3em;
-  height: .4em;
-  border-bottom: 1px solid;
-  border-right: 1.5px solid;
-  transform: skew(45deg);
-  transition: width .4s;
-}
-.more:hover::after{
-  width: 4em;
+
+@media (width < 768px) {
+  .more {
+      width: fit-content;
+      padding-right: 10px;
+  }
 }

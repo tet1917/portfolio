@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import styles from "./parallax.module.css";
+import { useIsResponsive } from "@/app/hooks/isResponsive";
 const { item } = styles;
 
 interface ParallaxImageProps {
@@ -16,7 +17,14 @@ export const ParallaxImage = ({ src, speed }: ParallaxImageProps) => {
     target: ref,
     offset: ["start 80%", "end 20%"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [100 * speed, -100 * speed]);
+
+  const speedRatio = useIsResponsive("orientation") ? 40 : 100;
+
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [speedRatio * speed, -speedRatio * speed]
+  );
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1.15]);
 
   return (

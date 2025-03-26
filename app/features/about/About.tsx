@@ -1,25 +1,64 @@
+// "use client";
+
 import Image from "next/image";
-import React from "react";
+// import { useCallback, useState } from "react";
 import styles from "./about.module.css";
-import Self from "./components/self/Self";
-import Skill from "./components/skill/Skill";
+import { Self } from "./components/self/Self";
+import { Skill } from "./components/skill/Skill";
 import { skillItemData } from "./itemData/skillData";
 import { selfInfoItem } from "./itemData/selfData";
 import { Heading } from "@/app/components/heading/Heading";
+import { LowerHero } from "@/app/components/lowerHero/LowerHero";
 
-const { profile, selfIntroduction, selfHead, self, selfList, skill } = styles;
+const { profile, selfIntroduction, selfHead, row, self, selfList, skill } =
+  styles;
 
-const About = () => {
+export const About = () => {
+  // const [openIndex, setOpenIndex] = useState<number | null>(null);
+  // const toggleExclusive = useCallback((i: number) => {
+  //   setOpenIndex((prev) => (prev === i ? null : i));
+  // }, []);
+
   return (
     <>
+      <LowerHero en="about" ja="僕について" />
+
       <section className={profile}>
         <div className={selfIntroduction}>
           <div className={selfHead}>
             <h2>
               Tetsu <span>K</span>azui
             </h2>
-            <p>1999年2月生まれ、福岡県出身、福岡県在住</p>
+            <dl>
+              <div className={row}>
+                <dt>birth</dt>
+                <dd>1999年2月</dd>
+              </div>
+              <div className={row}>
+                <dt>from</dt>
+                <dd>福岡県</dd>
+              </div>
+              <div className={row}>
+                <dt>live</dt>
+                <dd>福岡県</dd>
+              </div>
+              <div className={row}>
+                <dt>MBTI</dt>
+                <dd>INFP</dd>
+              </div>
+              <div className={row}>
+                <dt>animal</dt>
+                <dd>情熱的な黒豹</dd>
+              </div>
+            </dl>
           </div>
+          <Image
+            src={"/about/about-bg.webp"}
+            width={300}
+            height={500}
+            alt=""
+          ></Image>
+
           <p>
             サイトを見ていただき、ありがとうございます！
             <br />
@@ -41,21 +80,25 @@ const About = () => {
           ></Image>
           <ul className={selfList}>
             {selfInfoItem.map((item) => (
-              <Self {...item} key={item.title} />
+              <Self
+                {...item}
+                // toggleExclusive={() => toggleExclusive(i)}
+                // isOpen={openIndex === i}
+                key={item.title}
+              />
             ))}
           </ul>
         </div>
       </section>
+
       <section className={skill}>
         <Heading ja="スキル" en="Skill" />
         <ul>
           {skillItemData.map((item) => (
-            <Skill {...item} key={item.title}/>
+            <Skill {...item} key={item.title} />
           ))}
         </ul>
       </section>
     </>
   );
 };
-
-export default About;
