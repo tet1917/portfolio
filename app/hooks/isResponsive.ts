@@ -13,7 +13,7 @@ export const useIsResponsive = (condition: number | "orientation") => {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [condition]);
 
   return isResponsive;
 };

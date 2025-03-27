@@ -75,8 +75,8 @@ export const Input = () => {
         <label htmlFor="name">
           氏名<span className={required}>*</span>
         </label>
-        <input type="text" {...register("name")} />
-        <p className={error}>{errors.name?.message}</p>
+        <input type="text" {...register("yourName")} />
+        <p className={error}>{errors.yourName?.message}</p>
       </div>
 
       <div className={inputArea}>

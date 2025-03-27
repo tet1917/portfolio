@@ -1,36 +1,34 @@
-'use client'
-
 import { IoMdArrowDropdownCircle } from "react-icons/io";
 import styles from "./self.module.css";
 import Image from "next/image";
-import { useState } from "react";
+// import { useState } from "react";
 const { selfButton, open, selfToggle } = styles;
 
 type SelfListItem = {
   title: string;
   list: string[];
   image: string;
-  // isOpen: boolean;
-  // toggleExclusive: () => void;
+  isOpen: boolean;
+  toggleExclusive: () => void;
 };
 
 export const Self = ({
   title,
   list,
   image,
-  // isOpen,
-  // toggleExclusive,
+  isOpen,
+  toggleExclusive,
 }: SelfListItem) => {
-  const [state, setState] = useState(false)
-  const handleClick = () => {
-    setState(prev => !prev)
-  }
+  // const [state, setState] = useState(false)
+  // const handleClick = () => {
+  //   setState(prev => !prev)
+  // }
   return (
     <li>
       <button
         type="button"
-        className={`${selfButton} ${state ? open : ""}`}
-        onClick={handleClick}
+        className={`${selfButton} ${isOpen ? open : ""}`}
+        onClick={toggleExclusive}
       >
         <h3>
           <IoMdArrowDropdownCircle />

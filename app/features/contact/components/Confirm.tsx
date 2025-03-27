@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { initFormValue, useFormData } from "../context/FormProvider";
 import { send } from "../actions/send";
 import styles from "../contact.module.css";
@@ -10,12 +9,22 @@ const { container, confirm, buttons, button } = styles;
 export const Confirm = () => {
   const { formData, setFormData } = useFormData();
   const { setStep } = useStep();
-  const { category, companyName, name, email, message } = formData;
+  const { category, companyName, yourName, email, message } = formData;
 
   const handleSubmit = async () => {
-    await send(formData);
-    setStep("thanks");
-    setFormData(initFormValue);
+    try {
+      const response = await send(formData);
+      if (response?.success) {
+        setStep("thanks");
+        setFormData(initFormValue);
+      } else {
+        console.error("送信エラー", response?.message);
+        alert(response?.message || "送信に失敗しました。");
+      }
+    } catch (error) {
+      console.error("送信エラー", error);
+      alert("サーバとの通信に失敗しました");
+    }
   };
 
   return (
@@ -33,7 +42,7 @@ export const Confirm = () => {
         )}
         <li>
           <h3>氏名</h3>
-          <p>{name}</p>
+          <p>{yourName}</p>
         </li>
         <li>
           <h3>メールアドレス</h3>

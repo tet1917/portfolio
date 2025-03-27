@@ -9,7 +9,7 @@
   }
 }
 
-.self {
+.selfArea {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "image intro";
