@@ -2,9 +2,9 @@ import React from "react";
 import styles from "./portfolio.module.css";
 import { getArticles } from "@/libs/api";
 import { CategoryType, PortfolioType } from "@/app/types/types";
-import { Categories } from "./categories/Categories";
-import { Tags } from "./tags/Tags";
-import { PortfolioArticle } from "./article/PortfolioArticle";
+import { Categories } from "./components/categories/Categories";
+import { Tags } from "./components/tags/Tags";
+import { PortfolioArticle } from "./components/article/PortfolioArticle";
 import { LowerHero } from "@/app/components/lowerHero/LowerHero";
 const { cardLayout, sectionLayout } = styles;
 
