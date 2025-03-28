@@ -1,12 +1,12 @@
 import React from "react";
-import { LowerHero } from "../components/lowerHero/LowerHero";
-import { BlogArticle } from "../types/types";
 import { getBlog } from "@/libs/api";
-import { Blog } from "./Blog";
+import { Blog } from "./components/Blog";
 import styles from "./blog.module.css";
+import { BlogArticle } from "@/app/types/types";
+import { LowerHero } from "@/app/components/lowerHero/LowerHero";
 const { list } = styles;
 
-const BlogList = async () => {
+export const BlogList = async() => {
   const { data } = await getBlog();
   const blogs: BlogArticle[] = data.contents;
 
@@ -21,4 +21,3 @@ const BlogList = async () => {
     </>
   );
 };
-export default BlogList;

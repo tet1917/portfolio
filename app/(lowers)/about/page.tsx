@@ -1,5 +1,4 @@
-
-import { About } from "../features/about/About";
+import { About } from "@/app/features/about/About";
 
 export default function AboutPage() {
   return <About />;
