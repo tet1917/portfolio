@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import Image from "next/image";
 // import { useCallback, useState } from "react";
@@ -9,15 +9,13 @@ import { skillItemData } from "./itemData/skillData";
 import { selfInfoItem } from "./itemData/selfData";
 import { Heading } from "@/app/components/heading/Heading";
 import { LowerHero } from "@/app/components/lowerHero/LowerHero";
+import { useState } from "react";
 
-const { profile, selfIntroduction, selfHead, row, self, selfList, skill } =
+const { profile, selfIntroduction, selfHead, row, selfArea, selfList, skill } =
   styles;
 
 export const About = () => {
-  // const [openIndex, setOpenIndex] = useState<number | null>(null);
-  // const toggleExclusive = useCallback((i: number) => {
-  //   setOpenIndex((prev) => (prev === i ? null : i));
-  // }, []);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <>
@@ -71,7 +69,7 @@ export const About = () => {
             もし僕に興味を持っていただけた人がいれば、お気軽にご連絡をいただけると嬉しいです！！
           </p>
         </div>
-        <div className={self}>
+        <div className={selfArea}>
           <Image
             src={"/about/about-profile.jpg"}
             width={300}
@@ -79,11 +77,11 @@ export const About = () => {
             alt="self-image"
           ></Image>
           <ul className={selfList}>
-            {selfInfoItem.map((item) => (
+            {selfInfoItem.map((item, i) => (
               <Self
                 {...item}
-                // toggleExclusive={() => toggleExclusive(i)}
-                // isOpen={openIndex === i}
+                toggleExclusive={() => setOpenIndex((prev) => (prev === i ? null : i))}
+                isOpen={openIndex === i}
                 key={item.title}
               />
             ))}

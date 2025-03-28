@@ -13,16 +13,16 @@
   & svg {
     transition-property: rotate, color;
     transition-duration: 0.5s;
+    &:is(.open *) {
+      rotate: 180deg;
+      color: var(--primary-c);
+    }
   }
   @media (any-hover: hover) {
     &:hover svg {
       color: var(--primary-c);
     }
   }
-}
-.selfButton.open svg {
-  rotate: 180deg;
-  color: var(--primary-c);
 }
 
 .selfToggle {
@@ -60,7 +60,7 @@
     border-radius: 10px;
     margin-bottom: 0.6em;
   }
-}
-.selfButton.open .selfToggle {
-  grid-template-rows: 1fr;
+  &:is(.open *) {
+    grid-template-rows: 1fr;
+  }
 }
