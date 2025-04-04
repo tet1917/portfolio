@@ -1,11 +1,19 @@
 .sectionLayout {
   display: grid;
   grid-template-columns: max(10%, 100px) 1fr;
-  gap: max(5vw, 50px) 5vw;
+  gap: max(5vw, 30px) 5vw;
 }
 .cardLayout {
   grid-area: 1/2/2/3;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 5vw 5%;
+  gap: max(5vw,50px) 5%;
+}
+
+@media (width < 768px) {
+  .sectionLayout {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+  }
 }

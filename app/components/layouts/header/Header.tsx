@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.css";
 import { NavLink } from "./NavLink";
-const { header, hamburger, open } = styles;
+import { usePathname } from "next/navigation"
+const { header, hamburger, open , white } = styles;
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,10 +18,12 @@ export const Header = () => {
     { pageName: "blog" },
     { pageName: "contact" },
   ];
+  const pathname = usePathname();
+  const isPortfolioPage = pathname.includes("works") || pathname.includes("developments");
 
   return (
     <>
-      <header className={`${header} ${isOpen ? open : ""}`}>
+      <header className={`${header} ${isOpen ? open : ""} ${isPortfolioPage ? white : ""}`}>
         <Link href="/">
           <Image src="/logo.svg" alt="logo" width={40} height={40} />
         </Link>

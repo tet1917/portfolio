@@ -69,9 +69,8 @@
 .container {
   padding: max(3vw, 1em);
   background-color: #fff;
-  width: 600px;
+  width: min(90%,600px);
   aspect-ratio: 1;
-  max-width: 90%;
   max-height: calc(100vh - 5vw);
   border-radius: 1em;
   overflow-y: scroll;
@@ -136,4 +135,10 @@
 }
 .linkUrl:hover {
   color: var(--link-c);
+}
+
+@media(width < 768px) {
+  .container {
+    aspect-ratio: 5/7;
+  }
 }

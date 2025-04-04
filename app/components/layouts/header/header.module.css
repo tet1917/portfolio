@@ -26,6 +26,11 @@
 .hamburger {
   display: none;
 }
+@media (width < 768px) {
+  .header.white {
+    background-color: #fff;
+  }
+}
 
 @media (width < 510px) {
   .header {
