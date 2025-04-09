@@ -18,7 +18,7 @@ export const send = async (formData: FormData) => {
     };
     const adminMail = {
       from: "number191707@gmail.com",
-      to: "parfumdelapeche@gmail.com",
+      to: "number191707@gmail.com",
       subject: "新しいお問い合わせ",
       text: `tetポートフォリオサイトから、以下の内容でお問い合わせがありました。\n\n氏名: ${formData.yourName}\nメール: ${formData.email}\n内容: ${formData.message}`,
     };
