@@ -19,8 +19,20 @@ const zenKakuGothicNew = Zen_Kaku_Gothic_New({
 });
 
 export const metadata: Metadata = {
-  title: "tetsu kazui portfolio",
-  description: "tetのポートフォリオサイトでち",
+  title: "数井 哲のポートフォリオ",
+  description: "私のポートフォリオへようこそ。開発、制作活動を通して生まれた作品を紹介しています。ぜひご覧ください。",
+  openGraph:{
+    title: "数井 哲のポートフォリオ",
+    description:"私のポートフォリオへようこそ。開発、制作活動を通して生まれた作品を紹介しています。ぜひご覧ください。",
+    url:"https://number07.net",
+    images:[{
+      url:"/logo.svg",
+      width:1200,
+      height:630,
+    }],
+    locale:"ja_JP",
+    type:"website"
+  }
 };
 
 export default function RootLayout({
