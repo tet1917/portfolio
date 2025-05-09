@@ -7,7 +7,7 @@ export const formSchema = z.object({
     })
     .default("個人"),
   companyName: z.string().optional(),
-  name: z.string().min(1, "氏名を入力してください。"),
+  yourName: z.string().min(1, "氏名を入力してください。"),
   email: z.string().email("正しいメールアドレスを入力してください。"),
   message: z.string().min(1, "お問い合わせ内容を入力してください。"),
   agree: z.boolean().refine((val) => val === true, {

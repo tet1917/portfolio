@@ -1,0 +1,48 @@
+.tagsList {
+  grid-area: 1/1/3/2;
+  display: flex;
+  flex-direction: column;
+  & a {
+    text-align: center;
+    padding: 0.8em 1em;
+    border-bottom: 1px solid #ddd;
+    isolation: isolate;
+    position: relative;
+    &::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background-color: var(--bg-c);
+      scale: 0 1;
+      transform-origin: right;
+      transition: scale 0.3s;
+      z-index: -1;
+    }
+    &:hover::before,
+    &.isCurrentTag::before {
+      transform-origin: left;
+      scale: 1;
+    }
+  }
+
+}
+
+@media (width < 768px) {
+  .tagsList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: sticky;
+    top: calc(var(--header-h) + 44px);
+    padding-block: 20px;
+    z-index: 10;
+    background-color: #fff;
+    & a {
+      padding: 0.4em 0.8em;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      overflow: hidden;
+      background-color: #fff;
+    }
+  }
+}

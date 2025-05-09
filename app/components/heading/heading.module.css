@@ -12,27 +12,39 @@
   font-size: 1.2rem;
   font-weight: normal;
   margin-left: var(--indent);
-}
-.commonHeading span {
-  margin-left: calc(var(--indent) * -1);
-  font-size: var(--fz);
-  text-transform: uppercase;
-  letter-spacing: 0.5ch;
-  text-indent: .1ch;
-  font-weight: 600;
-}
-.commonHeading span::first-letter {
-  color: var(--primary-c);
+  & span {
+    margin-left: calc(var(--indent) * -1);
+    font-size: var(--fz);
+    text-transform: uppercase;
+    letter-spacing: 0.5ch;
+    text-indent: 0.1ch;
+    font-weight: 600;
+    &::first-letter {
+      color: var(--primary-c);
+    }
+  }
 }
 .right {
   align-items: end;
   margin-left: auto;
   margin-right: var(--indent);
+  & span {
+    margin-left: auto;
+    margin-right: calc(var(--indent) * -1 - 0.5ch);
+    &::first-letter {
+      color: #fff;
+    }
+  }
 }
-.right span {
-  margin-left: auto;
-  margin-right: calc(var(--indent) * -1 - .5ch);
-}
-.right span::first-letter {
-  color: #fff;
+
+@media (width < 768px) {
+  .commonHeading {
+    font-size: 1rem;
+  }
+  .commonHeading span {
+    letter-spacing: 0.2ch;
+  }
+  .right span {
+    margin-right: calc(var(--indent) * -1 - 0.2ch);
+  }
 }

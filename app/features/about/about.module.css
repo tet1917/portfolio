@@ -4,9 +4,50 @@
   width: min(100%, 1200px);
   margin: 0 auto;
   padding-bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: max(5vw, 50px) 5vw;
+  & h2 span {
+    color: var(--primary-c);
+  }
+  & > img:nth-of-type(1) {
+    z-index: -1;
+    width: 50%;
+    height: auto;
+    place-self: end;
+    opacity: 0.3;
+    filter: hue-rotate(180deg);
+    grid-area: 1/1/2/2;
+  }
+
+  & > p {
+    line-height: 1.8;
+  }
 }
-.profile h2 span {
-  color: var(--primary-c);
+.selfHead {
+  grid-area: 1/1/2/2;
+  & h2 {
+    font-size: max(2vw, 1.9em);
+    font-weight: 600;
+  }
+  & dl {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+.selfImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 max(1vw, 5px) max(2vw, 10px) rgb(0 0 0 /0.3);
+  /*
+  今はrgbaは使わず、rgbの,をはずしたものを使用。
+  透明度に関しては/をつける。
+  上記が現在推奨されている使い方。
+   */
 }
 
 .selfList {
@@ -15,50 +56,25 @@
   gap: 1em;
 }
 
-.self {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "image intro";
-  margin: 0 auto;
-  gap: 5vw;
-}
-.self > img {
-  grid-area: image;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 1rem;
-  box-shadow: 0 max(1vw, 5px) max(2vw, 10px) rgb(0 0 0 /0.3);
-  /*
-    今はrgbaは使わず、rgbの,をはずしたものを使用。
-    透明度に関しては/をつける。
-    上記が現在推奨されている使い方。
-     */
-}
-
-.selfIntroduction {
-  margin-bottom: 5vw;
+.row {
   display: flex;
-  gap: 5vw;
-}
-.selfIntroduction > * {
-  flex: 1;
-}
-
-.selfHead h2 {
-  font-size: max(2rem, 32px);
-  font-weight: 600;
-}
-.selfHead p {
-  margin-top: 1em;
-}
-
-.selfIntroduction p {
-  line-height: 1.8;
-}
-
-.self ul {
-  grid-area: intro;
+  align-items: baseline;
+  & dt {
+    width: 4em;
+    font-weight: normal;
+    text-transform: capitalize;
+    &::first-letter {
+      color: var(--primary-c);
+      font-weight: 500;
+      font-size: max(1.5vw, 1em);
+    }
+  }
+  & dd {
+    flex: 1;
+    &::before {
+      content: "：";
+    }
+  }
 }
 
 /* skill */
@@ -70,4 +86,28 @@
   width: min(100%, 1200px);
   margin-inline: auto;
   margin-top: max(5vw, 50px);
+}
+
+@media (width < 768px) {
+  .profile {
+    & > p {
+      grid-area: 2/1/3/3;
+    }
+    & > img:nth-of-type(1) {
+      grid-area: 1/1/3/3;
+      place-self: center end;
+      padding-bottom: 120px;
+      opacity: 0.1;
+      width: 30%;
+    }
+  }
+  .selfHead {
+    grid-area: 1/2/2/3;
+  }
+  .selfImage {
+    grid-area: 1/1/2/2;
+  }
+  .selfList {
+    grid-area: 3/1/4/3;
+  }
 }

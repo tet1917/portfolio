@@ -1,0 +1,33 @@
+.buttons {
+  display: flex;
+  align-self: center;
+  gap: 2em;
+  padding: max(5vw, 50px) 5vw 0;
+  & a {
+    padding: .8em 2em;
+    border-radius: 6px;
+    border: 1px solid;
+    transition-property: background-color, color, border-color;
+    transition-duration: .4s;
+    text-transform: uppercase;
+    &:hover,
+    &.current {
+      background-color: var(--primary-c);
+      color: #fff;
+      border-color: var(--primary-c);
+    }
+  }
+}
+
+@media(width < 768px) {
+  .buttons {
+    gap: 1em;
+    position: sticky;
+    top: calc(var(--header-h) - 49px);
+    z-index: 12;
+    background-color: #fff;
+    & a{
+      background-color: #fff;
+    }
+  }
+}

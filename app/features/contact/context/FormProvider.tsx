@@ -13,7 +13,7 @@ const FormContext = createContext<FormContextType | null>(null);
 export const initFormValue: FormData = {
   category: "個人",
   companyName: "",
-  name: "",
+  yourName: "",
   email: "",
   message: "",
   agree: false,

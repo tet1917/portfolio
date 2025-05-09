@@ -2,9 +2,9 @@ import { LowerHero } from "@/app/components/lowerHero/LowerHero";
 import styles from "./portfolio.module.css";
 import { CategoryType, PortfolioType } from "@/app/types/types";
 import { getArticles } from "@/libs/api";
-import { Categories } from "./categories/Categories";
-import { Tags } from "./tags/Tags";
-import { PortfolioArticle } from "./article/PortfolioArticle";
+import { Categories } from "./components/categories/Categories";
+import { Tags } from "./components/tags/Tags";
+import { PortfolioArticle } from "./components/article/PortfolioArticle";
 import { MoreButton } from "@/app/components/buttons/more/MoreButton";
 const { cardLayout, sectionLayout } = styles;
 

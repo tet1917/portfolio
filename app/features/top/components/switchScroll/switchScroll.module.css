@@ -1,0 +1,81 @@
+.container {
+  height: 200vh;
+  width: 100vw;
+  margin-left: -5vw;
+}
+.slider {
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  position: sticky;
+  overflow-y: hidden;
+  &.active {
+    overflow-y: scroll;
+  }
+}
+.item {
+  scroll-snap-align: start;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  & h4 {
+    text-align: center;
+    font-size: max(5vw, 30px);
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+}
+.box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: translate 0.8s, scale 2s;
+    translate: 0 20vmin;
+    scale: 1.1;
+    &:where(:is(.item:last-child *)) {
+      translate: 0 -20vh;
+    }
+    &.view {
+      scale: 1;
+      translate: 0;
+    }
+  }
+}
+.body {
+  position: absolute;
+  width: max(50%, 500px);
+  height: fit-content;
+  inset: 0;
+  margin: auto;
+}
+
+@media (width < 768px) {
+  .container {
+    height: auto;
+  }
+  .slider {
+    height: auto;
+    position: static;
+  }
+  .item {
+    height: auto;
+    aspect-ratio: 8/5;
+    & a {
+      margin-top: 1em;
+    }
+  }
+  .box img {
+    translate: 0;
+    scale: 1;
+  }
+  .body {
+    width: 90%;
+  }
+}
