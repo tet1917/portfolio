@@ -11,6 +11,8 @@ export const Confirm = () => {
   const { setStep } = useStep();
   const { category, companyName, yourName, email, message } = formData;
 
+  console.log(formData);
+
   const handleSubmit = async () => {
     try {
       const response = await send(formData);
