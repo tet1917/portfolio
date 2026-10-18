@@ -20,6 +20,8 @@ export const Header = () => {
   ];
   const pathname = usePathname();
   const isPortfolioPage = pathname.includes("works") || pathname.includes("developments");
+  // トレワクの紹介ページは自前のヘッダーを持つ
+  if (pathname.startsWith("/torewaku")) return null;
 
   return (
     <>
