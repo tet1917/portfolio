@@ -308,7 +308,7 @@
   font-weight: 700;
 }
 .h {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 900;
   margin-top: 6px;
 }
@@ -416,6 +416,18 @@
 }
 .root .contact .h2 {
   margin: 0;
+}
+.contactAction {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+.mail {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--mute);
+  user-select: all;
 }
 .footer {
   padding: 36px var(--gutter);
@@ -654,6 +666,9 @@
   }
   .legal td {
     padding: 10px 14px 18px;
+  }
+  .contactAction {
+    align-items: flex-start;
   }
   .contact {
     flex-direction: column;

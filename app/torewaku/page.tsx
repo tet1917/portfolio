@@ -10,7 +10,8 @@ const notoSansJP = Noto_Sans_JP({
   preload: false,
 });
 
-const CONTACT_URL = "https://www.number07.net/contact";
+const CONTACT_EMAIL = "number191707@gmail.com";
+const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("トレワクについてのお問い合わせ")}`;
 
 export const metadata: Metadata = {
   title: "トレワク | パーソナルジム向けの予約・会員管理サービス",
@@ -49,12 +50,12 @@ const legal: [string, React.ReactNode][] = [
   [
     "お問い合わせ",
     <>
-      お問い合わせフォームより（<a href={CONTACT_URL}>{CONTACT_URL}</a>）
+      メール（<a href={CONTACT_MAILTO}>{CONTACT_EMAIL}</a>）
     </>,
   ],
-  ["販売価格", "月額 6,500 円（税別）／年額 72,000 円（税別）"],
+  ["販売価格", "月額 6,500 円（税別）／年額 70,000 円（税別）"],
   ["商品代金以外の必要料金", "インターネット接続にかかる通信料はお客様のご負担となります"],
-  ["支払方法", "クレジットカード（Stripe）"],
+  ["支払方法", "クレジットカード"],
   ["支払時期", "月額は毎月前払い、年額は契約時に一括前払い"],
   ["提供時期", "お支払いの確認後、アカウントを発行した時点から利用できます"],
   ["解約", "いつでも解約できます。月額は当月末、年額は契約期間の末日で終了します"],
@@ -81,11 +82,11 @@ export default function TorewakuPage() {
         </div>
         <nav className={styles.nav}>
           <a href="#features">できること</a>
-          <a href="#money">お金の流れ</a>
+          <a href="#money">お支払い</a>
           <a href="#price">料金</a>
           <a href="#legal">特定商取引法に基づく表記</a>
         </nav>
-        <a className={styles.cta} href={CONTACT_URL}>
+        <a className={styles.cta} href={CONTACT_MAILTO}>
           お問い合わせ
         </a>
       </header>
@@ -122,7 +123,7 @@ export default function TorewakuPage() {
           <i>回数券・月額プラン</i>
           <span>CANCEL 21:00</span>
           <i>週のカレンダー</i>
-          <span>STRIPE CONNECT</span>
+          <span>CARD PAY</span>
           <i>代理予約</i>
         </div>
       </div>
@@ -145,14 +146,14 @@ export default function TorewakuPage() {
             0<em>円</em>
           </div>
           <div className={styles.l}>トレワクが代金に上乗せする手数料</div>
-          <div className={styles.s}>かかるのは Stripe の決済手数料のみ</div>
+          <div className={styles.s}>売上はジムの口座へ直接</div>
         </div>
         <div className={styles.stat}>
           <div className={styles.n}>
             6,500<em>円</em>
           </div>
           <div className={styles.l}>月額（税別）</div>
-          <div className={styles.s}>年額 72,000 円（税別）</div>
+          <div className={styles.s}>年額 70,000 円（税別）</div>
         </div>
       </div>
 
@@ -204,28 +205,28 @@ export default function TorewakuPage() {
       </div>
 
       <div id="money" className={styles.money}>
-        <div className={styles.kicker}>MONEY FLOW</div>
-        <h2 className={styles.h2}>代金は、ジムへまっすぐ。</h2>
+        <div className={styles.kicker}>EASY PAYMENT</div>
+        <h2 className={styles.h2}>お支払いも、スマホでかんたん。</h2>
         <div className={styles.flow}>
           <div className={styles.node}>
-            <div className={styles.t}>支払う人</div>
-            <div className={styles.h}>会員</div>
+            <div className={styles.t}>STEP 1</div>
+            <div className={styles.h}>会員がスマホでカード払い</div>
           </div>
           <div className={styles.arrow}>→</div>
           <div className={styles.node}>
-            <div className={styles.t}>決済</div>
-            <div className={styles.h}>Stripe Connect</div>
+            <div className={styles.t}>STEP 2</div>
+            <div className={styles.h}>回数券・プランに自動で反映</div>
           </div>
           <div className={styles.arrow}>→</div>
           <div className={styles.node}>
-            <div className={styles.t}>入金先</div>
-            <div className={styles.h}>各ジムの Stripe アカウント</div>
+            <div className={styles.t}>STEP 3</div>
+            <div className={styles.h}>売上はジムの口座へ</div>
           </div>
         </div>
         <p>
-          会員の支払いは Stripe Connect で各ジムの Stripe アカウントへ直接入金されます。
+          回数券や月額プランは、会員がスマホからその場で購入できます。
           <br className={styles.pcOnly} />
-          トレワクは会員の代金を預からず、手数料も上乗せしません。
+          集金や回数の書き換えは不要。店頭での現金・エアペイ払いもまとめて記録できます。
         </p>
       </div>
 
@@ -243,13 +244,13 @@ export default function TorewakuPage() {
           <div className={styles.plan}>
             <div className={styles.p}>年額プラン</div>
             <div className={`${styles.v} ${styles.num}`}>
-              72,000<small>円 / 年</small>
+              70,000<small>円 / 年</small>
             </div>
             <div className={styles.tax}>税別</div>
           </div>
         </div>
         <p className={styles.note}>
-          お支払いはクレジットカード（Stripe）。月額は毎月前払い、年額は契約時に一括前払いです。いつでも解約できます。
+          お支払いはクレジットカード。月額は毎月前払い、年額は契約時に一括前払いです。いつでも解約できます。
         </p>
       </div>
 
@@ -270,9 +271,12 @@ export default function TorewakuPage() {
 
       <div className={styles.contact}>
         <h2 className={styles.h2}>まずは、お問い合わせから。</h2>
-        <a className={styles.cta} href={CONTACT_URL}>
-          お問い合わせフォーム →
-        </a>
+        <div className={styles.contactAction}>
+          <a className={styles.cta} href={CONTACT_MAILTO}>
+            メールでお問い合わせ →
+          </a>
+          <p className={styles.mail}>{CONTACT_EMAIL}</p>
+        </div>
       </div>
       <footer className={styles.footer}>
         <span>トレワク — パーソナルジム向けの予約・会員管理サービス</span>
