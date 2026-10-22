@@ -61,6 +61,7 @@ const legal: [string, React.ReactNode][] = [
   ["解約", "いつでも解約できます。月額は当月末、年額は契約期間の末日で終了します"],
   ["返金", "支払い済みの料金の日割りでの返金は行いません"],
   ["動作環境", "最新版の Chrome / Safari / Edge"],
+  ["個人情報の取扱い", <a key="privacy" href="/torewaku/privacy">プライバシーポリシー</a>],
 ];
 
 const Phone = ({ src, alt }: { src: string; alt: string }) => (
@@ -280,7 +281,9 @@ export default function TorewakuPage() {
       </div>
       <footer className={styles.footer}>
         <span>トレワク — パーソナルジム向けの予約・会員管理サービス</span>
-        <span>© number</span>
+        <span>
+          <a href="/torewaku/privacy">プライバシーポリシー</a>　© number
+        </span>
       </footer>
     </div>
   );
